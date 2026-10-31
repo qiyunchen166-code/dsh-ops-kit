@@ -1,0 +1,12 @@
+{
+  "name": "dsh-ops-kit",
+  "version": "0.1.0",
+  "description": "Small dependency-free tools for a local agent stack: discover a random web port, edit a bridge allowlist, run config-driven health checks.",
+  "type": "module",
+  "license": "MIT",
+  "engines": { "node": ">=20" },
+  "scripts": {
+    "test": "node --test test/ops.test.mjs",
+    "check": "node src/healthcheck.mjs config/checks.example.json"
+  }
+}

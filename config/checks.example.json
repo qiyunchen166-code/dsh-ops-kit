@@ -1,0 +1,30 @@
+{
+  "checks": [
+    {
+      "name": "DSH web",
+      "type": "http",
+      "method": "POST",
+      "url": "{{env:DSH_WEB_URL}}/api/settings/describe",
+      "headers": { "cookie": "{{env:DSH_COOKIE}}" },
+      "body": {
+        "type": "client-request",
+        "rpcId": "probe-kit",
+        "method": "settings/describe",
+        "payload": { "args": {} }
+      },
+      "expect": { "status": 200, "jsonPath": "result.ok", "equals": true }
+    },
+    {
+      "name": "bridge",
+      "type": "tcp",
+      "host": "127.0.0.1",
+      "port": 3100
+    },
+    {
+      "name": "memory-api",
+      "type": "http",
+      "url": "http://127.0.0.1:3505/stats",
+      "expect": { "status": 200, "jsonPath": "total" }
+    }
+  ]
+}
