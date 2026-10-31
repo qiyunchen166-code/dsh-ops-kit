@@ -59,7 +59,7 @@ PASS  memory  21ms  HTTP 200 total=5433
 3/3 通过
 ```
 
-`expect` supports `status`, `contains`, `regex`, `jsonPath` + `equals`. `{{env:NAME}}` is substituted from the environment. Exit code is 1 if any check fails, 2 if the config is missing.
+`expect` supports `status`, `contains`, `regex`, `jsonPath` + `equals`. `{{env:NAME}}` is substituted from the environment. For RPC-style endpoints (DSH's `settings/describe` is one), a check may set `method`, `body` and `headers`; the body is JSON-encoded for you. Exit code is 1 if any check fails, 2 if the config is missing.
 
 ## Tests
 

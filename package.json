@@ -6,7 +6,8 @@
   "license": "MIT",
   "engines": { "node": ">=20" },
   "scripts": {
-    "test": "node --test test/ops.test.mjs",
+    "test": "node --test test/ops.test.mjs test/healthcheck-post.test.mjs",
+    "verify": "node --test test/ops.test.mjs test/healthcheck-post.test.mjs",
     "check": "node src/healthcheck.mjs config/checks.example.json"
   }
 }
